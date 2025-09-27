@@ -11,6 +11,7 @@ import br.edu.ufrn.lpii.sistema_biblioteca.usuarios.Professor;
 
 public class Main {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
@@ -79,9 +80,14 @@ public class Main {
 				scanner.nextLine(); // Limpa buffer após nextInt
 
 				Livro livro = new Livro(titulo, autor, ano, quantidade);
-				objBiblioteca.adicionarLivros(livro);
-				break;
-
+				if(livro.getTitulo() != null) {
+					objBiblioteca.adicionarLivros(livro);
+					break;
+				}
+				else {
+					break;
+				}
+				
 			case 3: // Realizar empréstimo
 				
 				//Verifica se tem usuários e livros cadastrados

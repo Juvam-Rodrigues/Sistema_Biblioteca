@@ -9,6 +9,10 @@ public class Livro {
 	}
 
 	public Livro(String titulo, String autor, int ano, int quantidade) {
+		if (quantidade <= 0) {
+			System.out.println("Quantidade insuficiente...\n");
+			return;
+		}
 		this.titulo = titulo;
 		this.autor = autor;
 		this.quantidade = quantidade;
@@ -49,7 +53,7 @@ public class Livro {
 	}
 
 	public boolean equals(Object obj) {
-		
+
 		Livro outro = (Livro) obj;
 
 		if (this.getAno() == outro.getAno() && this.getAutor().equalsIgnoreCase(outro.getAutor())
@@ -60,8 +64,8 @@ public class Livro {
 			return false;
 		}
 	}
-	
+
 	public void imprimirLivro() {
-		System.out.println(this.titulo +" - "+ this.autor + " - " + this.quantidade + " unidades disponíveis");
+		System.out.println(this.titulo + " - " + this.autor + " - " + this.quantidade + " unidades disponíveis");
 	}
 }
