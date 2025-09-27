@@ -80,6 +80,7 @@ public class Main {
 				scanner.nextLine(); // Limpa buffer após nextInt
 
 				Livro livro = new Livro(titulo, autor, ano, quantidade);
+				//Verifica se o livro foi criado
 				if(livro.getTitulo() != null) {
 					objBiblioteca.adicionarLivros(livro);
 					break;
