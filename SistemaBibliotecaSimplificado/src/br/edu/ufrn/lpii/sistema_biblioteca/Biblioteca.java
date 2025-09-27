@@ -41,7 +41,23 @@ public class Biblioteca {
 
 	public void adicionarLivros(Livro objLivro) {
 		if (livros.contains(objLivro)) {
-			System.out.println("Livro já cadastrado. Adicionando quantidade...");
+			System.out.println("Livro já cadastrado. Adicionando quantidade...\n");
+
+			for (Livro l : livros) {
+				if (l.equals(objLivro)) {
+					l.setQuantidade(l.getQuantidade() + objLivro.getQuantidade());
+					break;
+				}
+			}
+		} else {
+			livros.add(objLivro);
+			System.out.println("Livro adicionado com sucesso!\n");
+		}
+	}
+	
+	public void devolverLivro(Livro objLivro) {
+		if (livros.contains(objLivro)) {
+			System.out.println("Livro devolvido. Adicionando quantidade...\n");
 
 			for (Livro l : livros) {
 				if (l.equals(objLivro)) {
@@ -49,9 +65,6 @@ public class Biblioteca {
 					break;
 				}
 			}
-		} else {
-			livros.add(objLivro);
-			System.out.println("Livro adicionado com sucesso!\n");
 		}
 	}
 

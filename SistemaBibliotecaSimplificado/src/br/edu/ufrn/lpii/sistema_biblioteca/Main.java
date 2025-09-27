@@ -178,7 +178,7 @@ public class Main {
 						InterfaceTexto.imprimirFormatoInvalidoData();
 						break; // sai do case 4 se a data for inválida
 					}
-					objBiblioteca.adicionarLivros(emprestimoDevolver.getObjLivro());
+					objBiblioteca.devolverLivro(emprestimoDevolver.getObjLivro());
 					System.out.println("Livro devolvido com sucesso!\n");
 					break;
 				}
